@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-    {% if user.is_authenticated %}
 
+    {% if user.is_authenticated %}
+        <img class="testcover" src="{% static 'images/trick.jpg' %}">
         <h2>Welcome, {{ user.username }}</h2>
         <a href="{% url 'logout' %}">- Log Out -</a>
     

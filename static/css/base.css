@@ -1,0 +1,14 @@
+h1 {
+    color: red;
+    font-weight: bolder;
+}
+h2 {
+    color: darkred;
+}
+button{
+    color: blue;
+}
+.testcover {
+    width: auto;
+    height: 300px;
+}

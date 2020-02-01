@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block title %}Signup{% endblock title %}
 
@@ -8,9 +9,9 @@
 
 <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ form|crispy }}
 
-    <button type="submit">Signup</button> <a href="{% url 'home' %}">Cancel</a>
+    <button class="btn btn-success" type="submit">Signup</button> <a href="{% url 'home' %}">Cancel</a>
 </form>
 
 {% endblock content %}
