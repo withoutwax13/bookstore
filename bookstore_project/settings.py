@@ -158,3 +158,4 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_UNIQUE_USERNAME = True
 
 DEFAULT_FROM_EMAIL = 'admin@valerabookstore.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
