@@ -9,7 +9,19 @@
 
     <p>Price: {{ book.price }}</p>
     <p><a role="button" href="#">Purchase</a><br><a href="#" role="button">Add to Cart</a></p>
-
+</div>
+<div class="reviews">
+    
+    {% if book.reviews.all.count == 0 %}
+    <h3>No Review/s.</h3>
+    {% else %}
+    <h3>Reviews</h3>
+    <ul>
+        {% for review in book.reviews.all %}
+        <li>{{ review.review }} - {{ review.author }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </div>
 
 {% endblock content %}
