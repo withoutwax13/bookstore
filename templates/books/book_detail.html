@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ book.title }}{% endblock title %}
+
+{% block content %}
+<a href="{% url 'book_list' %}" role="button">Return</a><br>
+<div class="book-detail">
+    <a href="#">{{ book.title }}</a> by <a href="#">{{ book.author }}</a>
+
+    <p>Price: {{ book.price }}</p>
+    <p><a role="button" href="#">Purchase</a><br><a href="#" role="button">Add to Cart</a></p>
+
+</div>
+
+{% endblock content %}

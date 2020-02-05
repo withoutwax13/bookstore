@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Book List{% endblock title %}
+
+{% block content %}
+
+{% for book in book_list %}
+    <div class="book-list">
+        <h2><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h2> by <h3>{{ book.author }}</h3>
+        <p>Price: {{ book.price }}</p>
+    </div>
+{% endfor %}
+
+{% endblock content %}
