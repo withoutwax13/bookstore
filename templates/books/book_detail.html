@@ -5,6 +5,11 @@
 {% block content %}
 <a href="{% url 'book_list' %}" role="button">Return</a><br>
 <div class="book-detail">
+
+    {% if book.cover %}
+        <img src="{{ book.cover.url }}" alt="{{ book.cover.title }}"> <br>
+    {% endif %}
+    
     <a href="#">{{ book.title }}</a> by <a href="#">{{ book.author }}</a>
 
     <p>Price: {{ book.price }}</p>

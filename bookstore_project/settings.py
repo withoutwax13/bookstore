@@ -160,3 +160,7 @@ ACCOUNT_UNIQUE_USERNAME = True
 
 DEFAULT_FROM_EMAIL = 'admin@valerabookstore.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Media Files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
