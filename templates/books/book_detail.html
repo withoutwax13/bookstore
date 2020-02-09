@@ -5,25 +5,26 @@
 {% block content %}
 <a href="{% url 'book_list' %}" role="button">Return</a><br>
 <div class="book-detail">
-
     {% if book.cover %}
         <br><img class="book-cover" src="{{ book.cover.url }}" alt="{{ book.cover.title }}"> <br>
+    {% else %}
+    <br><p><b>No available image.</b></p>
     {% endif %}
 
-    <a href="#">{{ book.title }}</a> by <a href="#">{{ book.author }}</a>
+    <br><a href="#">{{ book.title }}</a> by <a href="#">{{ book.author }}</a>
 
     <p>Price: {{ book.price }}</p>
-    <p><a role="button" href="#">Purchase</a><br><a href="#" role="button">Add to Cart</a></p>
+    <p><a role="button" href="{% url 'orders' %}">Purchase</a><br><a href="#" role="button">Add to Cart</a></p>
 </div>
 <div class="reviews">
     
     {% if book.reviews.all.count == 0 %}
     <h3>No Review/s.</h3>
     {% else %}
-    <h3>Reviews</h3>
+    <br><br><h3>Review/s:</h3>
     <ul>
         {% for review in book.reviews.all %}
-        <li>{{ review.review }} - {{ review.author }} </li>
+        <li><i>{{ review.review }}</i> - <a href="#">{{ review.author }}</a> </li>
         {% endfor %}
     </ul>
     {% endif %}
